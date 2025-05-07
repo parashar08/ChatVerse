@@ -9,6 +9,11 @@ const userSchema = new mongoose.Schema(
             minLength: 3,
             maxLength: 50
         },
+        bio: {
+            type: String,
+            default: "",
+            trim: true
+        },
         email: {
             type: String,
             required: true,
@@ -40,6 +45,10 @@ const userSchema = new mongoose.Schema(
         isOnline: {
             type: Boolean,
             default: false
+        },
+        lastSeen: {
+            type: Date,
+            default: Date.now
         }
     },
     { timestamps: true }
