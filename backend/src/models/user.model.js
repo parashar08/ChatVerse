@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema(
     {
@@ -6,43 +6,43 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: true,
             trim: true,
-            minLenght: 4,
-            maxLenght: 32
+            minLength: 3,
+            maxLength: 50
         },
         email: {
             type: String,
             required: true,
-            unique: true,
             trim: true,
+            unique: true,
             lowercase: true,
-            minLenght: 4,
-            maxLenght: 32
+            minLength: 3,
+            maxLength: 50
+        },
+        phoneNumber: {
+            type: String,
+            required: true,
+            trim: true,
+            unique: true,
+            minLength: 10,
+            maxLength: 15
         },
         password: {
             type: String,
             required: true,
-            minLenght: 4,
-            maxLenght: 50
-        },
-        phone: {
-            type: String,
-            required: true,
-            unique: true,
+            trim: true,
+            minLength: 6,
+            maxLength: 100
         },
         avatar: {
             type: String,
-            default: "",
+            default: ""
         },
         isOnline: {
             type: Boolean,
-            default: false,
-        },
-        lastSeen: {
-            type: Date,
-            default: Date.now,
-        },
+            default: false
+        }
     },
     { timestamps: true }
-);
+)
 
-export const User = mongoose.model("User", userSchema);
+export const User = mongoose.model('User', userSchema);
