@@ -1,9 +1,9 @@
 const Footer = () => {
-    return (
-        <div>
-            <p>In footer components</p>
-        </div>
-    )
-}
+  return (
+    <div>
+      <p>footer components</p>
+    </div>
+  );
+};
 
 export default Footer;
