@@ -2,10 +2,10 @@ import Feature from "../components/Feature";
 import { FiMessageSquare, FiVideo, FiFile, FiUser, FiMic } from 'react-icons/fi';
 import { Link } from "react-router-dom";
 
-const Landing = () => {
+const LandingPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 text-gray-800 flex flex-col">
-      <main className="flex-1 flex flex-col items-center justify-center text-center px-4">
+      <main className="flex-1 flex flex-col items-center justify-center text-center px-4 py-2">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">Connect. Chat. Share.</h2>
         <p className="text-lg md:text-xl mb-10 max-w-2xl text-gray-700">ChatVerse lets you enjoy seemless 1-to-1 and group chats, share audio, video and files, and even make high-quality video calls - all in one beautiful, secure platform</p>
 
@@ -23,4 +23,4 @@ const Landing = () => {
   )
 }
 
-export default Landing;
+export default LandingPage;
