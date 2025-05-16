@@ -1,26 +1,57 @@
-import Feature from "../components/Feature";
-import { FiMessageSquare, FiVideo, FiFile, FiUser, FiMic } from 'react-icons/fi';
 import { Link } from "react-router-dom";
+import FeatureCard from "../components/FeatureCard";
+import { IoChatbubblesSharp } from "react-icons/io5";
+import { FaUsers } from "react-icons/fa";
+import { MdAudiotrack, MdVideocam } from "react-icons/md";
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 text-gray-800 flex flex-col">
-      <main className="flex-1 flex flex-col items-center justify-center text-center px-4 py-2">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6">Connect. Chat. Share.</h2>
-        <p className="text-lg md:text-xl mb-10 max-w-2xl text-gray-700">ChatVerse lets you enjoy seemless 1-to-1 and group chats, share audio, video and files, and even make high-quality video calls - all in one beautiful, secure platform</p>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      {/* hero section */}
+      <section className="max-w-4xl mx-auto text-center py-22 md:py-30 px-4">
+        <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-10 leading-tight">
+          Connect with Anyone,
+          <br /> Anywhere, Anytime
+        </h1>
+        <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-14">
+          ChatVerse is your ultimate chat application enabling seamless
+          one-to-one chats, group conversations, file sharing, and crystal-clear
+          video calls across the globe.
+        </p>
+        <Link to="/home">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-10 py-3 rounded-md shadow-md transition cursor-pointer">
+            Try ChatVerse Now
+          </button>
+        </Link>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
-          <Feature icon={<FiMessageSquare size={28}/>} title="1-to-1 or Group chat" desc="Stay connected with private and group connections"/>
-          <Feature icon={<FiVideo size={28}/>} title="Video calling" desc="Make smooth, high quality video calls with friends and relative."/>
-          <Feature icon={<FiFile size={28}/>} title="File sharing" desc="Send images, video and documents instantly"/>
-          <Feature icon={<FiMic size={28}/>} title="Voice notes" desc="Send quick audio messages on the go."/>
-          <Feature icon={<FiUser size={28}/>} title="User friendly" desc="Beautiful and responsive design for all device."/>
+      {/* feature section now */}
+      <section className="md:px-20 py-10 px-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+          <FeatureCard
+            icon={IoChatbubblesSharp}
+            title="One-to-One Chat"
+            description="Instant messaging with friends or colleagues in a private, secure environment."
+          />
+          <FeatureCard
+            icon={FaUsers}
+            title="Group Chat"
+            description="Create and join groups to chat, collaborate, and share moments together."
+          />
+          <FeatureCard
+            icon={MdAudiotrack}
+            title="Audio, Video & Files"
+            description="Share audio clips, videos, and files effortlessly with your contacts and groups."
+          />
+          <FeatureCard
+            icon={MdVideocam}
+            title="Global Video Calling"
+            description="Stay connected face-to-face with high-quality video calls worldwide."
+          />
         </div>
-
-        <Link to='/register' className="mt-12 inline-block bg-purple-600 text-white px-6 py-3 rounded-full text-lg hover:bg-purple-700 transition">Get Started for Free</Link>
-      </main>
+      </section>
     </div>
-  )
-}
+  );
+};
 
 export default LandingPage;
